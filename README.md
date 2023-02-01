@@ -1,6 +1,23 @@
 # Chickensoft EditorConfig
 
+[![Chickensoft Badge][chickensoft-badge]][chickensoft-website] [![Discord](https://img.shields.io/badge/Chickensoft%20Discord-%237289DA.svg?style=flat&logo=discord&logoColor=white)][discord]
+
 Chickensoft's EditorConfig for C#. If you want to write code in the style of the other Chickensoft packages, this EditorConfig is for you!
+
+## Installation
+
+This is provided as a .NET template. To install it, run the following command:
+
+```sh
+dotnet new --install Chickensoft.EditorConfig
+```
+
+And to generate an editor config:
+
+```sh
+# Creates a .editorconfig in the current directory.
+dotnet new chickenconfig
+```
 
 ## About
 
@@ -55,3 +72,10 @@ Notable style choices:
     private void MyOtherMethod() { }
   }
   ```
+
+<!-- Links -->
+
+<!-- Header -->
+[chickensoft-badge]: https://chickensoft.games/images/chickensoft/chickensoft_badge.svg
+[chickensoft-website]: https://chickensoft.games
+[discord]: https://discord.gg/gSjaPgMmYW

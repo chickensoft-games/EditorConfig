@@ -1,0 +1,84 @@
+name: '📦 Release'
+on:
+  # Releases are created when manually dispatched by the developer via the
+  # GitHub user interface.
+  workflow_dispatch:
+    inputs:
+      bump:
+        type: string
+        description: "major, minor, or patch"
+        required: true
+        default: "patch"
+
+jobs:
+  release:
+    name: '📦 Release'
+    runs-on: ubuntu-latest
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: true
+      DOTNET_NOLOGO: true
+    steps:
+      - name: 🧾 Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_BASIC }}
+          lfs: true
+          submodules: 'recursive'
+          fetch-depth: 0 # So we can get all tags.
+
+      - name: 🔎 Read Current Project Version
+        id: current-version
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+        with:
+          fallback: "0.0.0-devbuild"
+
+      - name: 🖨 Print Current Version
+        run: |
+          echo "Current Version: ${{ steps.current-version.outputs.tag }}"
+
+      - name: 🧮 Compute Next Version
+        uses: chickensoft-games/next-godot-csproj-version@v1
+        id: next-version
+        with:
+          project-version: ${{ steps.current-version.outputs.tag }}
+          godot-version: global.json
+          bump: ${{ inputs.bump }}
+
+      - uses: actions/setup-dotnet@v4
+        name: 💽 Setup .NET SDK
+        with:
+          # Use the .NET SDK from global.json in the root of the repository.
+          global-json-file: global.json
+
+      # Write version to file so .NET will build correct version.
+      - name: 📝 Write Version to File
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "0.0.0-devbuild"
+          replace: ${{ steps.next-version.outputs.version }}
+          regex: false
+          include: Chickensoft.EditorConfig.csproj
+
+      - name: 📦 Build
+        run: dotnet build -c Release
+
+      - name: 🔎 Get Package Path
+        id: package-path
+        run: |
+          package=$(find ./nupkg -name "*.nupkg")
+          echo "package=$package" >> "$GITHUB_OUTPUT"
+          echo "📦 Found package: $package"
+
+      - name: ✨ Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_BASIC }}
+        run: |
+          version="${{ steps.next-version.outputs.version }}"
+          gh release create --title "v$version" --generate-notes "$version" \
+            "${{ steps.package-path.outputs.package }}"
+
+      - name: 🛜 Publish to Nuget
+        run: |
+          dotnet nuget push "${{ steps.package-path.outputs.package }}" \
+            --api-key "${{ secrets.NUGET_API_KEY }}" \
+            --source "https://api.nuget.org/v3/index.json" --skip-duplicate

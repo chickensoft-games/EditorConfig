@@ -209,21 +209,12 @@ csharp_style_throw_expression = true:warning
 csharp_style_conditional_delegate_call = true:warning
 # 'using' directive preferences
 csharp_using_directive_placement = inside_namespace:warning
-
-##########################################
-# Unnecessary Code Rules
-##########################################
-
-# .NET Unnecessary code rules
-
-dotnet_code_quality_unused_parameters = non_public:suggestion
-dotnet_remove_unnecessary_suppression_exclusions = none
-dotnet_diagnostic.IDE0079.severity = warning
-
-# C# Unnecessary code rules
-
 # Use discard variable for unused expression values.
 csharp_style_unused_value_expression_statement_preference = discard_variable
+
+##########################################
+# Formatting Rules
+##########################################
 
 # .NET formatting rules
 
@@ -288,6 +279,16 @@ csharp_preserve_single_line_blocks = true
 
 # Namespace options
 csharp_style_namespace_declarations = file_scoped:warning
+
+##########################################
+# Unnecessary Code Rules
+##########################################
+
+# .NET Unnecessary code rules
+
+dotnet_code_quality_unused_parameters = non_public:suggestion
+dotnet_remove_unnecessary_suppression_exclusions = none
+dotnet_diagnostic.IDE0079.severity = warning
 
 ##########################################
 # .NET Naming Rules

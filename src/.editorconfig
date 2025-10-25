@@ -404,6 +404,8 @@ dotnet_diagnostic.CS8073.severity = none
 dotnet_diagnostic.IDE0058.severity = none
 # Allow me to use the word Collection if I want.
 dotnet_diagnostic.CA1711.severity = none
+# Don't warn about using reserved keywords (e.g., methods named "On")
+dotnet_diagnostic.CA1716.severity = none
 # No primary constructors — not supported well by tooling.
 dotnet_diagnostic.IDE0290.severity = none
 # Let me write dumb if statements for readability.

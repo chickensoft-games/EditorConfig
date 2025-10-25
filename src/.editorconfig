@@ -231,11 +231,9 @@ dotnet_diagnostic.IDE0079.severity = warning
 
 # Don't remove method parameters that are unused.
 dotnet_diagnostic.IDE0060.severity = none
-dotnet_diagnostic.RCS1163.severity = none
 
 # Don't remove methods that are unused.
 dotnet_diagnostic.IDE0051.severity = none
-dotnet_diagnostic.RCS1213.severity = none
 
 # Use discard variable for unused expression values.
 csharp_style_unused_value_expression_statement_preference = discard_variable
@@ -422,30 +420,13 @@ dotnet_diagnostic.CS8073.severity = none
 # Don't remove seemingly "unnecessary" assignments, as they often have
 # intended side-effects.
 dotnet_diagnostic.IDE0059.severity = none
-# Switch/case should always have a default clause. Tell that to Roslynator.
-dotnet_diagnostic.RCS1070.severity = none
-# Tell roslynator not to eat unused parameters.
-dotnet_diagnostic.RCS1163.severity = suggestion
 # Tell dotnet not to remove unused parameters.
 dotnet_diagnostic.IDE0060.severity = suggestion
-# Tell roslynator not to remove `partial` modifiers.
-dotnet_diagnostic.RCS1043.severity = none
-# Tell roslynator not to make classes static so aggressively.
-dotnet_diagnostic.RCS1102.severity = none
-# Roslynator wants to make properties readonly all the time, so stop it.
-# The developer knows best when it comes to contract definitions with Godot.
-dotnet_diagnostic.RCS1170.severity = none
 # Allow expression values to go unused, even without discard variable.
 # Otherwise, using Moq would be way too verbose.
 dotnet_diagnostic.IDE0058.severity = none
-# Enums don't need to declare explicit values. Everyone knows they start at 0.
-dotnet_diagnostic.RCS1161.severity = none
-# Allow unconstrained type parameter to be checked for null.
-dotnet_diagnostic.RCS1165.severity = none
 # Allow keyword-based names so that parameter names like `@event` can be used.
 dotnet_diagnostic.CA1716.severity = none
-# Let me put comments where I like
-dotnet_diagnostic.RCS1181.severity = none
 # Allow me to use the word Collection if I want.
 dotnet_diagnostic.CA1711.severity = none
 # No primary constructors — not supported well by tooling.

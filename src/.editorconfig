@@ -52,9 +52,8 @@ trim_trailing_whitespace = true
 ##########################################
 
 # GDScript Files
-[*.gd]
+[*.{gd,gdshader,gdshaderinc}]
 indent_style = tab
-indent_size = 2
 
 # Visual Studio Solution Files
 [*.sln]
@@ -311,7 +310,7 @@ csharp_style_namespace_declarations = file_scoped:warning
 
 ##########################################
 # Chickensoft Naming Conventions & Styles
-# These deviate heavily from Microsoft's Offical Naming Conventions.
+# These deviate heavily from Microsoft's Official Naming Conventions.
 ##########################################
 
 # Allow underscores in names.

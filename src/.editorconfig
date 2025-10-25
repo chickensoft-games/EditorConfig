@@ -402,8 +402,6 @@ dotnet_diagnostic.CS8073.severity = none
 # Allow expression values to go unused, even without discard variable.
 # Otherwise, using Moq would be way too verbose.
 dotnet_diagnostic.IDE0058.severity = none
-# Allow keyword-based names so that parameter names like `@event` can be used.
-dotnet_diagnostic.CA1716.severity = none
 # Allow me to use the word Collection if I want.
 dotnet_diagnostic.CA1711.severity = none
 # No primary constructors — not supported well by tooling.

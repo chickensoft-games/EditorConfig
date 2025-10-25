@@ -289,7 +289,6 @@ csharp_style_namespace_declarations = file_scoped:warning
 
 dotnet_code_quality_unused_parameters = non_public:suggestion
 dotnet_remove_unnecessary_suppression_exclusions = none
-dotnet_diagnostic.IDE0079.severity = warning
 
 ##########################################
 # .NET Naming Rules
@@ -413,8 +412,6 @@ dotnet_diagnostic.CA1711.severity = none
 dotnet_diagnostic.IDE0290.severity = none
 # Let me write dumb if statements for readability.
 dotnet_diagnostic.IDE0046.severity = none
-# Don't make me use expression bodies for methods
-dotnet_diagnostic.IDE0022.severity = none
 # DO make me populate a *switch expression*
 dotnet_diagnostic.IDE0072.severity = warning
 # Don't make me populate a *switch statement*

@@ -395,12 +395,6 @@ dotnet_naming_symbols.unspecified.applicable_accessibilities = *
 # Chickensoft Rule Overrides
 ##########################################
 
-# Don't require culture info for ToString()
-dotnet_diagnostic.CA1304.severity = none
-# Don't require a string comparison for comparing strings.
-dotnet_diagnostic.CA1310.severity = none
-# Don't require a string format specifier.
-dotnet_diagnostic.CA1305.severity = none
 # Allow protected fields.
 dotnet_diagnostic.CA1051.severity = none
 # Don't warn about checking values that are supposedly never null. Sometimes

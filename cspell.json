@@ -1,8 +1,11 @@
 {
   "words": [
+    "accessibilities",
     "chickenconfig",
     "Chickensoft",
     "devbuild",
+    "gdshader",
+    "gdshaderinc",
     "Haximus",
     "jacobtomlinson",
     "msbuild",
@@ -10,7 +13,11 @@
     "NOLOGO",
     "nupkg",
     "OPTOUT",
+    "projitems",
+    "resx",
     "roslynator",
+    "vsct",
+    "vsixmanifest",
     "Wyri"
   ]
 }

@@ -399,8 +399,6 @@ dotnet_diagnostic.CA1051.severity = none
 # Don't warn about checking values that are supposedly never null. Sometimes
 # they are actually null.
 dotnet_diagnostic.CS8073.severity = none
-# Tell dotnet not to remove unused parameters.
-dotnet_diagnostic.IDE0060.severity = suggestion
 # Allow expression values to go unused, even without discard variable.
 # Otherwise, using Moq would be way too verbose.
 dotnet_diagnostic.IDE0058.severity = none

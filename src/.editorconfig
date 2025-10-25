@@ -406,6 +406,9 @@ dotnet_diagnostic.IDE0058.severity = none
 dotnet_diagnostic.CA1711.severity = none
 # Don't warn about using reserved keywords (e.g., methods named "On")
 dotnet_diagnostic.CA1716.severity = none
+# Don't warn about public methods that can be marked static
+# (tests frequently don't access member data, and GoDotTest won't call static methods)
+dotnet_code_quality.CA1822.api_surface = private
 # No primary constructors — not supported well by tooling.
 dotnet_diagnostic.IDE0290.severity = none
 # Let me write dumb if statements for readability.

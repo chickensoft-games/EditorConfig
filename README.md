@@ -21,21 +21,22 @@ dotnet new chickenconfig
 
 ## About
 
-- ✅ Indentation is 2 spaces (not tabs)
-- ✅ Newlines are LF only
-- ✅ All dotnet analyzers are configured to be enabled as warnings by default.
-- ✅ Add roslynator suppressions for unwanted Roslynator analyzer warnings. Roslynator is available as an extension for VSCode and provides numerous refactoring and analysis features.
+- ✅ Indentation is 2 spaces (not tabs).
+- ✅ Newlines are LF only.
+- ✅ Many dotnet analyzers are configured to be enabled as warnings by default.
+- ✅ Warnings for methods that can be made static and names that match reserved keywords are disabled by default to accommodate Chickensoft packages (GoDotTest and LogicBlocks, respectively).
 
 > This coding style makes no attempt to follow Microsoft's standards. Rather, it is designed for ease of use while writing C# scripts and packages for use with the Godot Engine.
 
 Notable style choices:
 
-- ✅ K&R Style Braces
+- ✅ Allman Style Braces (a recent change in Chickensoft style from K&R braces)
 
   ```csharp
   namespace MyNamespace;
 
-  public class MyObject {
+  public class MyObject
+  {
     // Opening braces don't have their own line.
   }
   ```
@@ -43,7 +44,8 @@ Notable style choices:
 - ✅ Non-private constant fields are `UPPER_CASE`
 
   ```csharp
-  public class MyObject {
+  public class MyObject
+  {
     public const int A_NUMBER = 42;
     protected const string SOME_TEXT = "Hello, world!";
   }
@@ -52,7 +54,8 @@ Notable style choices:
 - ✅ Private constant fields are `_camelCase`
 
   ```csharp
-  public class MyObject {
+  public class MyObject
+  {
     private const int _someNumber = 42;
     private const string _someText = "Hello, world!";
   }
@@ -61,7 +64,8 @@ Notable style choices:
 - ✅ Properties, Methods, Events, etc., are always `PascalCase`
 
   ```csharp
-  public class MyObject {
+  public class MyObject
+  {
     public int MyProperty { get; set; }
     private string MyOtherProperty => "Hello, world!";
 
@@ -76,6 +80,6 @@ Notable style choices:
 <!-- Links -->
 
 <!-- Header -->
-[chickensoft-badge]: https://chickensoft.games/images/chickensoft/chickensoft_badge.svg
+[chickensoft-badge]: https://chickensoft.games/img/badges/chickensoft_badge.svg
 [chickensoft-website]: https://chickensoft.games
 [discord]: https://discord.gg/gSjaPgMmYW
